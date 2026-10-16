@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mObywatel UI — galeria</title>
+<style>
+  :root {
+    --bg: #0b0f14;
+    --card: #141a22;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #1f6feb;
+    --border: #21262d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+  }
+  h1 { font-size: 32px; font-weight: 600; margin-bottom: 8px; }
+  .sub { color: var(--muted); font-size: 14px; }
+  .note {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  h2 {
+    font-size: 20px;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card h3 { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+  .card p { font-size: 12px; color: var(--muted); word-break: break-all; }
+  .swatch {
+    height: 48px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  .btn:hover { background: #388bfd; }
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>mObywatel UI</h1>
+    <p class="sub">Galeria komponentów interfejsu z opublikowanego kodu źródłowego</p>
+  </header>
+
+  <div class="note">
+    To jest wyłącznie warstwa wizualna — komponenty UI, kolory, style, ikony.
+    Kod nie zawiera logiki biznesowej, API ani modułu uwierzytelniania.
+    Nie da się z niego zbudować działającej aplikacji.
+  </div>
+
+  <h2>Paleta kolorów</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="swatch" style="background:#1f6feb"></div>
+      <h3>Primary Blue</h3>
+      <p>#1f6feb</p>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:#0b0f14"></div>
+      <h3>Background Dark</h3>
+      <p>#0b0f14</p>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:#141a22"></div>
+      <h3>Surface</h3>
+      <p>#141a22</p>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:#e6edf3"></div>
+      <h3>Text Primary</h3>
+      <p>#e6edf3</p>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:#8b949e"></div>
+      <h3>Text Muted</h3>
+      <p>#8b949e</p>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:#21262d"></div>
+      <h3>Border</h3>
+      <p>#21262d</p>
+    </div>
+  </div>
+
+  <h2>Komponenty</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Przycisk główny</h3>
+      <p>Primary action button</p>
+      <a href="#" class="btn" style="pointer-events:none">Kontynuuj</a>
+    </div>
+    <div class="card">
+      <h3>Pole tekstowe</h3>
+      <p>Input field</p>
+      <div style="background:#0b0f14;border:1px solid #21262d;border-radius:6px;padding:10px 12px;margin-top:12px;font-size:13px;color:#8b949e">Wpisz tekst...</div>
+    </div>
+    <div class="card">
+      <h3>Karta</h3>
+      <p>Content card</p>
+      <div style="background:#0b0f14;border:1px solid #21262d;border-radius:8px;padding:12px;margin-top:12px">
+        <div style="font-size:13px;font-weight:500">mObywatel</div>
+        <div style="font-size:11px;color:#8b949e;margin-top:4px">Dokument tożsamości</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Struktura repo</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Android/</h3>
+      <p>Komponenty UI dla Androida</p>
+    </div>
+    <div class="card">
+      <h3>iOS/</h3>
+      <p>Komponenty UI dla iOS</p>
+    </div>
+    <div class="card">
+      <h3>LICENSES/</h3>
+      <p>Licencje (MIT, EUPL-1.2)</p>
+    </div>
+  </div>
+
+  <footer>
+    Źródło: <a href="https://github.com/fajfer/mObywatel" style="color:#1f6feb;text-decoration:none">fajfer/mObywatel</a>
+    · Licencja MIT · Wyłącznie warstwa UI
+  </footer>
+
+</div>
+</body>
+</html>
